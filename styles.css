@@ -1,0 +1,58 @@
+body {
+    background-image:   url('background.jpg');
+    background-size:    cover;
+    background-color: #724d83;
+}
+
+#container {
+    position: fixed;
+    top:      0px;
+    left:     0px;
+    right:    0px;
+    bottom:   0px;
+}
+
+#main-text {
+    position:   fixed;
+    left:       0px;
+    right:      0px;
+    bottom:     10%;
+    text-align: center;
+}
+
+#names {
+    font-size:    80px;
+    font-family: 'Amatic SC';
+    color:      #ebe2e6;
+}
+
+#date {
+    display:            inline-block;
+    padding:            5px 10px;
+    font-size:          20px;
+    font-family:        Rubik;
+    color:            #402391;
+    background-color: #ebe2e6;
+    border-radius:      2px;
+}
+
+@media all and (max-width: 1000px) {
+    body {
+        background-image:   url('background-mobile.jpg');
+        background-color: #593675;
+    }
+
+    #main-text {
+        bottom: 30%;
+    }
+
+    #names {
+        font-size: 150px;
+    }
+
+    #date {
+        padding:       10px 20px;
+        font-size:     50px;
+        border-radius: 5px;
+    }
+}
