@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Gordon Wedding</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
+    </head>
+
+
+    <body>
+        <div id='container'>
+            {% block body %}{% endblock %}
+
+            <div id='nav'>
+                <a href='' class='nav-button'>Details</a>
+                <a href='gifts' class='nav-button'>Gifts</a>
+                <a href='' class='nav-button'>Memories</a>
+            </div>
+        </div>
+    </body>
+</html>
