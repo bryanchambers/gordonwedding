@@ -7,3 +7,14 @@ app.debug = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////var/www/gordonwedding/database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+
+
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+
+
+if __name__ == '__main__':
+	app.run()
