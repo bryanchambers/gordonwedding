@@ -1,0 +1,2 @@
+CREATE TABLE user(id INTEGER PRIMARY KEY AUTOINCREMENT, type TEXT, password TEXT);
+CREATE TABLE memory(id INTEGER PRIMARY KEY, text TEXT, sig TEXT, public BOOLEAN, approved BOOLEAN, rejected BOOLEAN, skipped BOOLEAN, created INTEGER);

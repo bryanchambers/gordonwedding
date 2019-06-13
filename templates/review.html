@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div id='page'>
+        <div id='title'>Review</div>
+
+        <div id='page-content'>
+            <div class='simple-text'>
+                {% if memory %}
+                    <span>You have {{ count }} memor{% if count > 1%}ies{% else %}y{% endif %} to review!</span>
+
+                {% else %}
+                    <span>No memories to review right now</span>
+                {% endif %}
+            </div>
+
+            <div class='item'>
+                <div class='memory'>{{ memory.text }}</div>
+                <div class='from'>{{ memory.sig }}</div>
+            </div>
+
+            <div id='share'><a href='review/approve/{{ memory.id }}'>Approve</a><a href='review/reject/{{ memory.id }}'>Reject</a><a href='review/skip/{{ memory.id }}'>Skip</a></div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div id='page'>
+        <div id='title'>Memories</div>
+
+        <div id='page-content'>
+            <div id='share'><a href='share'>Share a Memory</a>{% if 'type' in session %}<a href='review'>Review</a>{% endif %}</div>
+
+            {% for memory in memories %}
+                <div class='item'>
+                    <div class='memory'>{{ memory.text }}</div>
+                    <div class='from'>{{ memory.sig }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

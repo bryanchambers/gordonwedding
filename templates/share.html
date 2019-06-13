@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div id='page'>
+        <div id='title'>Share</div>
+
+        <div id='page-content'>
+            <div class='simple-text'>Jaysin and Ashley invite you to share memories, stories, thoughts, or words of encouragement as they begin this new adventure together.</div>
+            
+            <form action='' method='POST'>
+                <div><textarea class='input' name='text'></textarea></div>
+
+                <div><input type="text" class='input' name='from'></div>
+
+                <div><input type='radio' name='public' value='true'         >Share with everyone</div>
+                <div><input type='radio' name='public' value='false' checked>Only share with Jaysin and Ashley</div>
+
+                <div><input type='submit' class='button' name='submit' value='Share'></div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
