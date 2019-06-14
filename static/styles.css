@@ -320,16 +320,12 @@ form textarea {
         border-radius: 0px 0px 7px 7px;
     }
 
-    #bottom-nav {
-        padding:    15px;
-    }
-
     #bottom-nav a {
-        padding: 7px;
+        padding: 20px;
     }
     
     #bottom-nav img {
-        height: 100px;
+        height: 120px;
     }
 
     .login-logout {
