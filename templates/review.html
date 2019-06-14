@@ -2,24 +2,24 @@
 
 {% block body %}
     <div id='page'>
-        <div id='title'>Review</div>
+        <div id='title'><div class='relative'>Review{% if count > 0 %}<div class='count count-title'>{{ count }}</div>{% endif %}</div></div>
 
         <div id='page-content'>
-            <div class='simple-text'>
-                {% if memory %}
-                    <span>You have {{ count }} memor{% if count > 1%}ies{% else %}y{% endif %} to review!</span>
+            {% if memory %}
+                <div class='item'>
+                    <div class='memory'>{{ memory.text }}</div>
+                    <div class='from'>{{ memory.sig }}</div>
+                </div>
 
-                {% else %}
-                    <span>No memories to review right now</span>
-                {% endif %}
-            </div>
+                <div class='center button-spacer'>
+                    <a href='review/approve/{{ memory.id }}' class='button'>Approve</a>
+                    <a href='review/reject/{{ memory.id }}'  class='button'>Reject</a>
+                    <a href='review/skip/{{ memory.id }}'    class='button'>Skip</a>
+                </div>
 
-            <div class='item'>
-                <div class='memory'>{{ memory.text }}</div>
-                <div class='from'>{{ memory.sig }}</div>
-            </div>
-
-            <div id='share'><a href='review/approve/{{ memory.id }}'>Approve</a><a href='review/reject/{{ memory.id }}'>Reject</a><a href='review/skip/{{ memory.id }}'>Skip</a></div>
+            {% else %}
+                <div class='simple-text center'>Nothing to review right now</div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

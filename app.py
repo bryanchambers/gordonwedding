@@ -53,12 +53,14 @@ def details():
 @app.route('/memories')
 def memories():
     if 'type' in session:
+        count  = Memory.query.filter_by(approved=False, rejected=False, public=True).count()
         memories = Memory.query.filter_by(approved=True).order_by(Memory.created).all()
     
     else:
+        count = 0
         memories = Memory.query.filter_by(approved=True, public=True).order_by(Memory.created).all()
 
-    return render_template('memories.html', memories=memories)
+    return render_template('memories.html', memories=memories, count=count)
 
 
 
@@ -67,7 +69,7 @@ def share():
     if 'submit' in request.form:
         text     = request.form['text'] if 'text' in request.form else None
         sig      = request.form['from'] if 'from' in request.form else None
-        public   = True if 'public' in request.form and request.form['public'] == 'true' else False
+        public   = True if request.form['submit'] == 'Share with Everyone' else False
         approved = not public 
 
         if text and sig:
@@ -153,7 +155,7 @@ def login():
             
             if auth:
                 session['type'] = user.type
-                return redirect('/')
+                return redirect('memories')
 
     if 'user' in session: session.pop('type')
     return render_template('login.html')
@@ -162,7 +164,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.clear()
-    return redirect('/')
+    return redirect('memories')
 
 
 if __name__ == '__main__':

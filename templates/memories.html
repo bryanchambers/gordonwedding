@@ -5,7 +5,17 @@
         <div id='title'>Memories</div>
 
         <div id='page-content'>
-            <div id='share'><a href='share'>Share a Memory</a>{% if 'type' in session %}<a href='review'>Review</a>{% endif %}</div>
+            <div class='center button-spacer'>
+                <a href='share' class='button'>Share a Memory</a>
+
+                {% if 'type' in session %}
+                    <div class='relative'>
+
+                        <a href='review' class='button'>Review</a>
+                        {% if count > 0 %}<div class='count count-button'>{{ count }}</div>{% endif %}
+                    </div>
+                {% endif %}
+            </div>
 
             {% for memory in memories %}
                 <div class='item'>

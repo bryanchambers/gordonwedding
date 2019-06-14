@@ -1,64 +1,100 @@
 body {
-    background-image:   url('background.jpg');
-    background-size:    cover;
-    background-color: #593675;
+    background-image:      url('background.jpg');
+    background-size:       cover;
+    background-color:    #593675;
     background-attachment: fixed;
+    overflow-y:            scroll;
 }
 
-#container {
-    /* position: fixed;
-    top:      0px;
-    left:     0px;
-    right:    0px;
-    bottom:   0px; */
+
+
+
+
+
+
+
+
+
+#main-nav {
+    position:     fixed;
+    top:          0px;
+    width:        100%;
+    text-align:   center;
+    font-family: 'Muli';
+    font-size:    20px;
+    color:      #ebe2e6;
+}
+
+.nav-button {
+    display:            inline-block;
+    min-width:          100px;
+    margin:             0px 20px;
+    padding:            10px 15px;
+    border-radius:      0px 0px 5px 5px;
+    text-decoration:    none;
+    color:            #ebe2e6;
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 #bottom-nav {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    position:   fixed;
+    bottom:     0px;
+    left:       0px;
+    right:      0px;
+    padding:    15px;
     text-align: center;
-    padding: 15px;
+    
 }
 
 #bottom-nav a {
-    text-decoration: none;
     padding: 7px;
     opacity: 0.2;
+    text-decoration: none;
 }
 
 #bottom-nav img {
-    height: 50px;
+    height: 40px;
 }
 
 #bottom-nav a:hover {
     opacity: 1;
 }
 
+.login-logout {
+    position: relative;
+    top: -2px;
+}
+
+
+
+
+
+
+
+
 
 
 #main-text {
-    position:   fixed;
-    left:       0px;
-    right:      0px;
-    bottom:     0px;
-    text-align: center;
-    padding-bottom: 50px;
+    position:           fixed;
+    left:               0px;
+    right:              0px;
+    bottom:             0px;
+    padding-bottom:     30px;
+    text-align:         center;
     background-color: rgba(0, 0, 0, 0.25);
 }
 
 #names {
-    font-size:    100px;
     font-family: 'Amatic SC';
+    font-size:    100px;
     color:      #ebe2e6;
 }
 
 #date {
     display:            inline-block;
-    padding:            5px 10px;
+    padding:            10px;
+    font-family:        'Muli';
     font-size:          20px;
-    font-family:        'Lato';
     color:            #402391;
     background-color: #ebe2e6;
     border-radius:      3px;
@@ -66,103 +102,73 @@ body {
 
 
 
-#nav {
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    text-align: center;
-    font-family: 'Lato';
-    font-size: 20px;
-    color:      #ebe2e6;
-}
 
-
-.nav-button {
-    display: inline-block;
-    /* border: 2px solid rgba(235, 226, 230, 0.3); */
-    color: #ebe2e6;
-    text-decoration: none;
-    padding: 10px 15px;
-    margin: 0px 20px;
-    border-radius: 0px 0px 5px 5px;
-    min-width: 100px;
-    background-color: rgba(0, 0, 0, 0.25);
-}
 
 
 
 
 #page {
-    margin: 0 auto;
-    margin-bottom: 100px;
-    width: 50%;
+    width:              95%;
+    max-width:          900px;
+    margin:             0 auto;
+    margin-top:         100px;
+    margin-bottom:      150px;
+    padding:            20px;
+    border-radius:      3px;
     background-color: rgba(89, 54, 117, 0.9);
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    /* background-color: rgba(64, 35, 145, 0.7); */
-    margin-top: 100px;
-    padding-bottom: 30px;
-    /* min-height: 50%; */
-    border-radius: 3px;
-    box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.35);
+    box-shadow:         0px 0px 7px 1px rgba(0, 0, 0, 0.35);
 }
 
 #title {
-    text-align: center;
     font-size:    100px;
     font-family: 'Amatic SC';
+    text-align:   center;
     color:      #ebe2e6;
 }
 
 #page-content {
+    width:        85%;
+    margin:       0 auto;
     font-family: 'Muli';
+    font-size:    20px;
+    line-height:  25px;
     color:      #ebe2e6;
-    font-size: 20px;
-    line-height: 25px;
 }
 
 .simple-text {
-    margin: 20px 50px;
-}
-
-.item {
-    margin: 20px 50px 50px 50px;
-}
-
-.question {
-    font-weight: bold;
-    padding: 5px 0px;
-}
-
-.answer {
-    padding: 5px 0px;
-    /* border-top: 1px solid #ebe2e6; */
-}
-
-#share {
-    text-align: center;
     margin: 20px 0px;
 }
 
-#share a {
-    color:      #ebe2e6;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    border: 1px solid #ebe2e6;
-    border-radius: 3px;
-    padding: 7px;
+
+
+
+
+
+
+
+
+
+.item {
+    margin: 20px 5px 50px 5px;
 }
 
+.question, .from {
+    padding: 5px 0px;
+    font-weight: bold;
+}
 
-.memory {
+.answer, .memory {
     padding: 5px 0px;
 }
 
-.from {
-    padding: 5px 0px;
-    font-weight: bold;
-    text-align: center;
-}
+
+
+
+
+
+
+
+
 
 
 
@@ -180,31 +186,118 @@ form textarea {
 }
 
 .input {
-    width: 90%;
-    padding: 0px;
-    margin: 0px;
-    box-sizing: content-box;
+    width:              95%;
+    margin:             20px 0px;
+    padding:            10px;
+    font-family:       'Muli';
+    font-size:          20px;
+    color:            #ebe2e6;
     background-color: #593675;
-    border-radius: 3px;
-    font-family: 'Muli';
-    font-size: 20px;
-    color:      #ebe2e6;
-    border: 1px solid #ebe2e6;
-    padding: 7px;
-    margin: 10px 0px;
+    border:             1px solid rgba(235, 226, 230, 0.4);
+    border-radius:      3px;
+    box-sizing:         content-box;
 }
 
-.button {
-    background-color: #593675;
-    border-radius: 3px;
-    font-family: 'Muli';
-    font-size: 16px;
-    font-weight: bold;
-    color:      #ebe2e6;
-    border: 1px solid #ebe2e6;
-    padding: 7px;
-    margin: 10px;
+.input:focus {
+    outline: none;
+    border:  1px solid #ebe2e6;
 }
+
+::placeholder {
+    color: rgba(235, 226, 230, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+.button {
+    display:          inline-block;
+    margin:           20px 10px !important;
+    padding:          10px  !important;
+    min-width:        80px;
+    font-family:     'Muli';
+    font-size:        16px;
+    font-weight:      bold;
+    text-decoration:  none;
+    color:          #ebe2e6;
+    background-color: transparent;
+    border:           1px solid rgba(235, 226, 230, 0.2) !important;
+    border-radius:    3px;
+    cursor:           pointer;
+}
+
+.button:hover {
+    color:            #402391 !important;
+    background-color: #ebe2e6;
+    
+}
+
+.button-spacer {
+    margin: 20px 5px 50px 5px;
+}
+
+
+
+
+
+
+
+
+
+
+.count {
+    position:           absolute;
+    width:              18px;
+    line-height:        18px;
+    padding:            3px;
+    padding-right:      4px;
+    font-family:       'Muli';
+    font-size:          16px;
+    font-weight:        bold;
+    color:            #402391;
+    background-color: #ebe2e6;
+    border:             2px solid #4f3069;
+    border-radius:      50px;
+}
+
+.count-title {
+    top:    20px;
+    right: -30px;
+}
+
+.count-button {
+    top:   -17px;
+    right: -2px;
+}
+
+
+
+
+
+
+
+
+
+
+.center {
+    text-align: center;
+}
+
+.relative {
+    position: relative;
+    display:  inline-block;
+}
+
+
+
+
+
 
 
 
