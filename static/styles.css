@@ -329,7 +329,7 @@ form textarea {
     }
 
     .login-logout {
-        top: -2px;
+        top: -5px;
     }
 
     #main-text {
@@ -371,11 +371,13 @@ form textarea {
     }
 
     .item {
-        margin: 50px 5px 120px 5px;
+        margin:      50px 5px 100px 5px;
+        font-size:   50px;
+        line-height: 70px
     }
     
     .question, .from, .answer, .memory {
-        padding: 10px 0px;
+        padding: 20px 0px;
     }
 
     form {
