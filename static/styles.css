@@ -305,31 +305,112 @@ form textarea {
 
 @media all and (max-width: 1000px) {
     body {
-        background-image:   url('background-mobile.jpg');
-    }
-
-    #main-text {
-        bottom: 25%;
-    }
-
-    #names {
-        font-size: 150px;
-    }
-
-    #date {
-        padding:       10px 20px;
-        font-size:     50px;
-        border-radius: 8px;
-    }
-
-    #nav {
-        font-size: 50px;
+        background-image: url('background-mobile.jpg');
     }
 
     .nav-button {
-        min-width: 20%;
-        margin: 0px 15px;
-        padding: 20px 30px;
+        width:         20%;
+        margin:        0px 10px;
+        padding:       20px 30px;
+        font-size:     40px;
+        font-weight:   bold;
         border-radius: 0px 0px 7px 7px;
+    }
+
+    #main-text {
+        padding: 50px 0px 80px;
+    }
+
+    #names {
+        font-size: 165px;
+    }
+
+    #date {
+        padding:       15px 25px;
+        font-size:     50px;
+        border-radius: 7px;
+    }
+
+    #page {
+        margin-top:         200px;
+        margin-bottom:      300px;
+        padding:            50px 20px;
+        border-radius:      7px;
+        box-shadow:         0px 0px 20px 1px rgba(0, 0, 0, 0.35);
+    }
+
+    #title {
+        font-size: 150px;
+    }
+
+    #page-content {
+        width:       90%;
+        font-size:   20px;
+        line-height: 25px;
+    }
+    
+    .simple-text {
+        margin:    20px 0px;
+    }
+
+    .item {
+        margin: 50px 5px 120px 5px;
+    }
+    
+    .question, .from, .answer, .memory {
+        padding: 10px 0px;
+    }
+
+    form {
+        margin: 20px 0px;
+    }
+
+    form textarea {
+        resize: none;
+        height: 500px;
+    }
+    
+    .input {
+        margin:             50px 0px;
+        padding:            20px;
+        font-size:          50px;
+        border:             1px solid rgba(235, 226, 230, 0.4);
+        border-radius:      7px;
+    }
+    
+    .input:focus {
+        border:  1px solid #ebe2e6;
+    }
+
+    .button {
+        width: 95%;
+        padding:          20px  !important;
+        font-size:        50px;
+        border:           1px solid rgba(235, 226, 230, 0.2) !important;
+        border-radius:    7px;
+    }
+
+    .button-spacer {
+        margin: 20px 5px 50px 5px;
+    }
+
+    .count {
+        width:              50px;
+        line-height:        50px;
+        padding:            3px;
+        padding-right:      4px;
+        font-size:          50px;
+        border:             2px solid #4f3069;
+        border-radius:      50px;
+    }
+    
+    .count-title {
+        top:    20px;
+        right: -30px;
+    }
+    
+    .count-button {
+        top:   -17px;
+        right: -2px;
     }
 }
