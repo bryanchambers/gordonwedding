@@ -17,12 +17,17 @@
                 {% endif %}
             </div>
 
-            {% for memory in memories %}
-                <div class='item'>
-                    <div class='memory'>{{ memory.text }}</div>
-                    <div class='from'>{{ memory.sig }}</div>
-                </div>
-            {% endfor %}
+            {% if memories | length > 0 %}
+                {% for memory in memories %}
+                    <div class='item'>
+                        <div class='memory'>{{ memory.text }}</div>
+                        <div class='from'>{{ memory.sig }}</div>
+                    </div>
+                {% endfor %}
+
+            {% else %}
+                <div class='simple-text center'>No memories yet</div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
