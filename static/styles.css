@@ -4,7 +4,6 @@ body {
     background-color:    #593675;
     background-attachment: fixed;
     overflow-y:            scroll;
-    font-size:             16px;
 }
 
 
@@ -137,7 +136,8 @@ body {
 }
 
 .simple-text {
-    margin: 20px 0px;
+    margin:    20px 0px;
+    font-size: 18px;
 }
 
 
@@ -353,6 +353,7 @@ form textarea {
     
     .simple-text {
         margin:    20px 0px;
+        font-size: 35px;
     }
 
     .item {
