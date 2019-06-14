@@ -4,6 +4,7 @@ body {
     background-color:    #593675;
     background-attachment: fixed;
     overflow-y:            scroll;
+    font-size:             16px;
 }
 
 
@@ -306,6 +307,7 @@ form textarea {
 @media all and (max-width: 1000px) {
     body {
         background-image: url('background-mobile.jpg');
+        font-size: 50px;
     }
 
     .nav-button {
