@@ -412,7 +412,7 @@ input {
     }
 
     .button, .form-button-wrapper {
-        min-width:        200px;
+        min-width:        250px;
         padding:          50px !important; 
         border:           2px solid rgba(235, 226, 230, 0.2) !important;
         border-radius:    7px;

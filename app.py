@@ -129,7 +129,7 @@ def approve(id):
 
     memory.approved = True
     db.session.commit()
-    return redirect('review')
+    return redirect('/review')
 
 
 
