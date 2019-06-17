@@ -388,7 +388,11 @@ form textarea {
         resize: none;
         height: 500px;
     }
-    
+
+    input {
+        -webkit-appearance: none;
+    }
+
     .input {
         margin:             50px 0px;
         padding:            20px;
