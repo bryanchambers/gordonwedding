@@ -228,28 +228,29 @@ input {
     padding:          10px !important;
     min-width:        80px;
     font-family:     'Muli';
-    font-size:        16px;
-    font-weight:      bold;
-    text-decoration:  none;
-    color:          #ebe2e6;
     background-color: transparent;
     border:           1px solid rgba(235, 226, 230, 0.2) !important;
     border-radius:    3px;
     cursor:           pointer;
 }
 
-.form-button {
-    padding:          0px !important;
+.button, .form-button {
+    display:          inline-block;
     font-family:     'Muli';
     font-size:        16px;
     font-weight:      bold;
     text-decoration:  none;
     color:          #ebe2e6;
     background-color: transparent;
+    cursor:           pointer;
+}
+
+.form-button {
+    padding:          0px !important;
     border:           none;
 }
 
-.button:hover, .form-button-wrapper:hover, .form-button:hover {
+.button:hover, .form-button-wrapper:hover, .form-button-wrapper:hover .form-button, .form-button:hover {
     color:            #402391 !important;
     background-color: #ebe2e6;
     
@@ -418,9 +419,12 @@ input {
 
     .button, .form-button-wrapper {
         padding:          50px !important; 
-        font-size:        50px;
         border:           2px solid rgba(235, 226, 230, 0.2) !important;
         border-radius:    7px;
+    }
+
+    .button, .form-button { 
+        font-size: 50px;
     }
 
     .button-spacer {
