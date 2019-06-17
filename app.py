@@ -147,8 +147,8 @@ def reject(id):
 def login():
     password = None
 
-    if 'submit' in request.form: 
-        password = request.form['8aW4GAk6Q5yz'] if request.form['8aW4GAk6Q5yz'] else None
+    if 'submit' in request.args: 
+        password = request.args['8aW4GAk6Q5yz'] if request.args['8aW4GAk6Q5yz'] else None
 
     if password:
         users = User.query.all()
