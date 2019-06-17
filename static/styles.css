@@ -251,7 +251,7 @@ input {
     border:  none;
 }
 
-.button:hover, .form-button-wrapper:hover, .form-button-wrapper:hover .form-button, .form-button:hover {
+.button:hover, .form-button-wrapper:hover, .form-button-wrapper:hover .form-button, .form-button:hover, .form-button-wrapper:focus {
     color:            #402391 !important;
     background-color: #ebe2e6;
     
