@@ -428,6 +428,14 @@ input {
         font-size: 50px;
     }
 
+    .button {
+        padding:          50px !important; 
+    }
+
+    .form-button-wrapper {
+        padding:          25px !important; 
+    }
+
     .button-spacer {
         margin: 20px 5px 50px 5px;
     }
