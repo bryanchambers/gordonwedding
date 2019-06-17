@@ -273,27 +273,19 @@ input {
 
 .count {
     position:           absolute;
-    width:              18px;
-    line-height:        18px;
-    padding:            3px;
-    padding-right:      4px;
     font-family:       'Muli';
     font-size:          16px;
     font-weight:        bold;
-    color:            #402391;
-    background-color: #ebe2e6;
-    border:             2px solid #4f3069;
-    border-radius:      50px;
 }
 
 .count-title {
     top:    20px;
-    right: -30px;
+    right: -15px;
 }
 
 .count-button {
-    top:   -17px;
-    right: -2px;
+    top:    4px;
+    right: -5px;
 }
 
 
@@ -420,6 +412,7 @@ input {
     }
 
     .button, .form-button-wrapper {
+        min-width:        160px;
         padding:          50px !important; 
         border:           2px solid rgba(235, 226, 230, 0.2) !important;
         border-radius:    7px;
@@ -442,13 +435,7 @@ input {
     }
 
     .count {
-        width:              50px;
-        line-height:        50px;
-        padding:            3px;
-        padding-right:      4px;
-        font-size:          50px;
-        border:             2px solid #4f3069;
-        border-radius:      50px;
+        font-size: 50px;
     }
     
     .count-title {
