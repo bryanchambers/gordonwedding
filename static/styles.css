@@ -237,7 +237,7 @@ input {
     cursor:           pointer;
 }
 
-.button {
+.button, .form-button-wrapper {
     padding: 10px !important;
 }
 
@@ -418,7 +418,7 @@ input {
         border-radius:    7px;
     }
 
-    .button {
+    .button, .form-button-wrapper {
         padding: 50px !important; 
     }
 
