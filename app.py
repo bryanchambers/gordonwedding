@@ -87,6 +87,7 @@ def thanks():
     return render_template('thanks.html')
 
 
+
 @app.route('/review')
 def review():
     count  = Memory.query.filter_by(approved=False, rejected=False, public=True).count()
@@ -109,6 +110,7 @@ def skip(id):
     return redirect('review')
 
 
+
 @app.route('/review/clear')
 def clear():
     memories = Memory.query.filter_by(approved=False, rejected=False, skipped=True).all()
@@ -120,13 +122,15 @@ def clear():
     return redirect('review')
 
 
+
 @app.route('/review/approve/<int:id>')
 def approve(id):
     memory = Memory.query.get(id)
-    
+
     memory.approved = True
     db.session.commit()
     return redirect('review')
+
 
 
 @app.route('/review/reject/<int:id>')
@@ -139,26 +143,31 @@ def reject(id):
 
 
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if 'submit' in request.form: 
+    password = None
+
+    if '3fQ3C2P2v8z2' in request.args:
+        password = request.args['3fQ3C2P2v8z2'] if request.args['3fQ3C2P2v8z2'] else None
+
+    elif 'submit' in request.form: 
         password = request.form['8aW4GAk6Q5yz'] if request.form['8aW4GAk6Q5yz'] else None
 
-        if password:
-            users = User.query.all()
-            auth  = False
+    if password:
+        users = User.query.all()
+        auth  = False
 
-            for user in users:
-                if user.password:
-                    if hash.pbkdf2_sha256.verify(password, user.password): auth = True
-            
-            if auth:
-                session['type'] = user.type
-                return redirect('memories')
+        for user in users:
+            if user.password:
+                if hash.pbkdf2_sha256.verify(password, user.password): auth = True
+        
+        if auth:
+            session['type'] = user.type
+            return redirect('memories')
 
     if 'user' in session: session.pop('type')
     return render_template('login.html')
+
 
 
 @app.route('/logout')
