@@ -245,9 +245,11 @@ input {
     font-weight:      bold;
     text-decoration:  none;
     color:          #ebe2e6;
+    background-color: transparent;
+    border:           none;
 }
 
-.button:hover, .form-button:hover {
+.button:hover, .form-button-wrapper:hover {
     color:            #402391 !important;
     background-color: #ebe2e6;
     
