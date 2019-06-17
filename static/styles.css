@@ -188,7 +188,7 @@ form textarea {
 }
 
 input {
-    -webkit-appearance: none;
+    -webkit-appearance: none !important;
 }
 
 .input {
@@ -225,7 +225,6 @@ input {
 .button, .form-button {
     display:          inline-block;
     margin:           20px 10px !important;
-    padding: 0px;
     padding:          10px !important;
     min-width:        80px;
     font-family:     'Muli';
@@ -237,6 +236,10 @@ input {
     border:           1px solid rgba(235, 226, 230, 0.2) !important;
     border-radius:    3px;
     cursor:           pointer;
+}
+
+.form-button {
+    padding: 0px important;
 }
 
 .button:hover, .form-button:hover {
@@ -407,10 +410,13 @@ input {
     }
 
     .button, .form-button {
-        padding:          50px  !important;
         font-size:        50px;
         border:           2px solid rgba(235, 226, 230, 0.2) !important;
         border-radius:    7px;
+    }
+
+    .button {
+        padding: 50px !important; 
     }
 
     .button-spacer {
