@@ -225,7 +225,6 @@ input {
 .button, .form-button {
     display:          inline-block;
     margin:           20px 10px !important;
-    padding:          10px !important;
     min-width:        80px;
     font-family:     'Muli';
     font-size:        16px;
@@ -238,8 +237,12 @@ input {
     cursor:           pointer;
 }
 
+.button {
+    padding: 10px !important;
+}
+
 .form-button {
-    padding: 0px important;
+    padding: 0px !important;
 }
 
 .button:hover, .form-button:hover {
