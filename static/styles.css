@@ -251,7 +251,7 @@ input {
     border:  none;
 }
 
-.button:hover, .form-button-wrapper:hover, .form-button-wrapper:hover .form-button, .form-button:hover, .form-button-wrapper:focus {
+.button:hover, .form-button-wrapper:hover, .form-button-wrapper:hover .form-button, .form-button:hover {
     color:            #402391 !important;
     background-color: #ebe2e6;
     
@@ -408,14 +408,14 @@ input {
 
     .input {
         margin:             50px 0px;
-        padding:            20px;
+        padding:            30px;
         font-size:          50px;
-        border:             1px solid rgba(235, 226, 230, 0.4);
+        border:             2px solid rgba(235, 226, 230, 0.4);
         border-radius:      7px;
     }
     
     .input:focus {
-        border:  1px solid #ebe2e6;
+        border:  2px solid #ebe2e6;
     }
 
     .button, .form-button-wrapper {
