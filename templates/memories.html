@@ -9,9 +9,7 @@
 
                 {% if 'type' in session %}
                     <div class='relative'>
-
-                        <a href='review' class='button'>Review</a>
-                        {% if count > 0 %}<div class='count count-button'>{{ count }}</div>{% endif %}
+                        <a href='review' class='button'>Review{% if count > 0 %}*{% endif %}</a>
                     </div>
                 {% else %}
                     <a href='share' class='button'>Share a Memory</a>

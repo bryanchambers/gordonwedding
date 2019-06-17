@@ -69,7 +69,7 @@ def share():
     if 'submit' in request.form:
         text     = request.form['text'] if 'text' in request.form else None
         sig      = request.form['from'] if 'from' in request.form else None
-        public   = True if request.form['submit'] == 'Share with Everyone' else False
+        public   = True if request.form['submit'] == 'Everyone' else False
         approved = not public 
 
         if text and sig:
