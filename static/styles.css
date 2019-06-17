@@ -239,7 +239,12 @@ input {
 }
 
 .form-button {
-    padding: 0px !important;
+    padding:          0px !important;
+    font-family:     'Muli';
+    font-size:        16px;
+    font-weight:      bold;
+    text-decoration:  none;
+    color:          #ebe2e6;
 }
 
 .button:hover, .form-button:hover {
