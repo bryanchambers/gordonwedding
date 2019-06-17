@@ -406,7 +406,7 @@ input {
         border:  1px solid #ebe2e6;
     }
 
-    .button {
+    .button, .form-button {
         padding:          50px  !important;
         font-size:        50px;
         border:           2px solid rgba(235, 226, 230, 0.2) !important;
