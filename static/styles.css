@@ -222,9 +222,10 @@ input {
 
 
 
-.button, .form-button {
+.button, .form-button-wrapper {
     display:          inline-block;
     margin:           20px 10px !important;
+    padding:          10px !important;
     min-width:        80px;
     font-family:     'Muli';
     font-size:        16px;
@@ -235,11 +236,6 @@ input {
     border:           1px solid rgba(235, 226, 230, 0.2) !important;
     border-radius:    3px;
     cursor:           pointer;
-}
-
-.button, .form-button-wrapper {
-    display: inline-block;
-    padding: 10px !important;
 }
 
 .form-button {
@@ -413,14 +409,11 @@ input {
         border:  1px solid #ebe2e6;
     }
 
-    .button, .form-button {
+    .button, .form-button-wrapper {
+        padding:          50px !important; 
         font-size:        50px;
         border:           2px solid rgba(235, 226, 230, 0.2) !important;
         border-radius:    7px;
-    }
-
-    .button, .form-button-wrapper {
-        padding: 50px !important; 
     }
 
     .button-spacer {
