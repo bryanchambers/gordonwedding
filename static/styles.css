@@ -187,6 +187,10 @@ form textarea {
     height: 250px;
 }
 
+input {
+    -webkit-appearance: none;
+}
+
 .input {
     width:              95%;
     margin:             20px 0px;
@@ -387,10 +391,6 @@ form textarea {
     form textarea {
         resize: none;
         height: 500px;
-    }
-
-    input {
-        -webkit-appearance: none;
     }
 
     .input {
