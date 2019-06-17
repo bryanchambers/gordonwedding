@@ -238,6 +238,7 @@ input {
 }
 
 .button, .form-button-wrapper {
+    display: inline-block;
     padding: 10px !important;
 }
 
