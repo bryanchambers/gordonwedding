@@ -76,7 +76,7 @@ def share():
             memory = Memory(text=text, sig=sig, approved=approved, public=public)
             db.session.add(memory)
             db.session.commit()
-            return redirect('thanks')
+            return redirect('/thanks')
 
     return render_template('share.html')
 
@@ -95,7 +95,7 @@ def review():
     
     if not memory:
         skipped = Memory.query.filter_by(approved=False, rejected=False, public=True, skipped=True).all()
-        if skipped: return redirect('review/clear')
+        if skipped: return redirect('/review/clear')
 
     return render_template('review.html', memory=memory, count=count)
 
@@ -107,7 +107,7 @@ def skip(id):
     
     memory.skipped = True
     db.session.commit()
-    return redirect('review')
+    return redirect('/review')
 
 
 
@@ -119,7 +119,7 @@ def clear():
         memory.skipped = False
 
     db.session.commit()
-    return redirect('review')
+    return redirect('/review')
 
 
 
@@ -139,7 +139,7 @@ def reject(id):
     
     memory.rejected = True
     db.session.commit()
-    return redirect('review')
+    return redirect('/review')
 
 
 
@@ -160,10 +160,15 @@ def login():
         for user in users:
             if user.password:
                 if hash.pbkdf2_sha256.verify(password, user.password): auth = True
-        
+
         if auth:
             session['type'] = user.type
-            return redirect('memories')
+            
+            if 'bookmark' in request.args and request.args['bookmark']:
+                return render_template('bookmark.html')
+
+            else:
+                return redirect('/memories')
 
     if 'user' in session: session.pop('type')
     return render_template('login.html')
@@ -173,7 +178,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.clear()
-    return redirect('memories')
+    return redirect('/memories')
 
 
 if __name__ == '__main__':
