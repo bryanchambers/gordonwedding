@@ -146,11 +146,6 @@ def reject(id):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     password = None
-    skip_bookmark = False
-
-    if '3fQ3C2P2v8z2' in request.args:
-        password = request.args['3fQ3C2P2v8z2'] if request.args['3fQ3C2P2v8z2'] else None
-        skip_bookmark = True
 
     elif 'submit' in request.form: 
         password = request.form['8aW4GAk6Q5yz'] if request.form['8aW4GAk6Q5yz'] else None
@@ -165,12 +160,7 @@ def login():
 
         if auth:
             session['type'] = user.type
-            
-            if skip_bookmark:
-                return redirect('/memories')
-
-            else:
-                return render_template('bookmark.html')
+            return render_template('bookmark.html')
 
     if 'user' in session: session.pop('type')
     return render_template('login.html')
