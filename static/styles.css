@@ -246,8 +246,9 @@ input {
 }
 
 .form-button {
-    padding:          0px !important;
-    border:           none;
+    margin:  0px !important;
+    padding: 0px !important;
+    border:  none;
 }
 
 .button:hover, .form-button-wrapper:hover, .form-button-wrapper:hover .form-button, .form-button:hover {
