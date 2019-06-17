@@ -6,7 +6,6 @@
 
         <div id='page-content'>
             <div class='center button-spacer'>
-                <a href='share' class='button'>Share a Memory</a>
 
                 {% if 'type' in session %}
                     <div class='relative'>
@@ -14,6 +13,8 @@
                         <a href='review' class='button'>Review</a>
                         {% if count > 0 %}<div class='count count-button'>{{ count }}</div>{% endif %}
                     </div>
+                {% else %}
+                    <a href='share' class='button'>Share a Memory</a>
                 {% endif %}
             </div>
 
