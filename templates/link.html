@@ -5,12 +5,18 @@
         <div id='title'>Login Link</div>
 
         <div id='page-content'>
-            <div class='simple-text'>You can copy the link below and use it to login without typing in the password. Anyone with this link will be able to login and approve posts, so keep it private.</div>
+            <div class='simple-text'>You can bookmark this page, or just copy the url below, and use it to login without typing in the password. Anyone with this link will be able to login and approve posts, so keep it private.</div>
+
+            <div id='login-url' class='code-text'>[Link URL]</div>
 
             <div class='center button-spacer'>
-                <a href='/login/{{ code }}' class='button'>{{ code }}</a>
                 <a href='/settings/link/new' class='button'>Reset Link</a>
             </div>
         </div>
     </div>
+
+    <script>
+        var node = document.getElementById('login-url');
+        if(node) { node.innerHTML = window.location; }
+    </script>
 {% endblock %}

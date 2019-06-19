@@ -187,7 +187,12 @@ def login_with_link(code):
     if auth:
         session['type'] = user.type
         session['id']   = user.id
-        return redirect('/memories')
+
+        if 'link' in session:
+            session.pop('link')
+            return render_template('link.html', code=user.code)
+
+        else: return redirect('/memories')
 
     if 'user' in session:
         session.clear()
@@ -233,8 +238,7 @@ def valid_password(pw):
     for char in pw.lower():
         if char not in allowed: return False
 
-    unique = len(set(pw))
-    print(unique)
+    if len(set(pw)) < 3: return False
 
     return True
 
@@ -250,7 +254,8 @@ def login_link():
     if not user.code:
         return redirect('/settings/link/new')
 
-    return render_template('link.html', code=user.code)
+    session['link'] = True
+    return redirect('/login/' + user.code)
 
 
 
@@ -261,7 +266,8 @@ def new_link():
 
     user = User.query.get(int(session['id']))
 
-    code = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(24))
+    chars = string.ascii_lowercase + string.ascii_uppercase + string.digits
+    code  = ''.join(random.choice(chars) for x in range(24))
     print(code)
 
     user.code = code

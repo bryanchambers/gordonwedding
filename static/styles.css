@@ -141,6 +141,13 @@ body {
     line-height: 25px;
 }
 
+.code-text {
+    margin:      20px 0px;
+    font-family: monospace;
+    font-size:   16px;
+    text-align:  center;
+}
+
 
 
 
