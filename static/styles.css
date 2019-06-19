@@ -145,6 +145,7 @@ body {
     margin:        20px 0px;
     font-family:   monospace;
     font-size:     16px;
+    line-height:   20px;
     text-align:    center;
     overflow-wrap: break-word;
 }
@@ -390,8 +391,8 @@ input {
 
     .code-text {
         margin:      50px 0px;
-        font-size:   40px;
-
+        font-size:   45px;
+        line-height: 60px;
     }
 
     .item {
