@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
-from passlib  import pwd, hash
+
+from passlib import pwd, hash
+import random, string
 
 app = Flask(__name__)
 app.secret_key = 'Kw4zL8StOmb2DxyeoickGyclkaGA2eYbBEQ6'
@@ -17,12 +19,13 @@ class User(db.Model):
     id       = db.Column(db.Integer, primary_key=True)
     type     = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(100))
+    code     = db.Column(db.String(100))
 
 
 
 class Memory(db.Model):
     id       = db.Column(db.Integer, primary_key=True)
-    text     = db.Column(db.String(50), nullable=False)
+    text     = db.Column(db.String(50),  nullable=False)
     sig      = db.Column(db.String(100), nullable=False)
     public   = db.Column(db.Boolean, default=False)
     approved = db.Column(db.Boolean, default=False)
@@ -145,25 +148,125 @@ def reject(id):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    password = None
+    users = User.query.all()
+    auth  = False
 
-    if 'submit' in request.args: 
-        password = request.args['8aW4GAk6Q5yz'] if request.args['8aW4GAk6Q5yz'] else None
+    if 'submit' in request.form: 
+        password = request.form['8aW4GAk6Q5yz'] if request.form['8aW4GAk6Q5yz'] else None
 
-    if password:
-        users = User.query.all()
-        auth  = False
+        if password:
+            for user in users:
+                if user.password:
+                    if hash.pbkdf2_sha256.verify(password, user.password):
+                        auth = True
+                        break
 
-        for user in users:
-            if user.password:
-                if hash.pbkdf2_sha256.verify(password, user.password): auth = True
+    if auth:
+        session['type'] = user.type
+        session['id']   = user.id
+        return redirect('/memories')
 
-        if auth:
-            session['type'] = user.type
-            return render_template('bookmark.html')
+    if 'user' in session:
+        session.clear()
 
-    if 'user' in session: session.pop('type')
     return render_template('login.html')
+
+
+
+@app.route('/login/<string:code>')
+def login_with_link(code):
+    users = User.query.all()
+    auth  = False
+
+    for user in users:
+        if user.code:
+            if user.code == code:
+                auth = True
+                break
+
+    if auth:
+        session['type'] = user.type
+        session['id']   = user.id
+        return redirect('/memories')
+
+    if 'user' in session:
+        session.clear()
+
+    return redirect('/login')
+
+
+
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+
+
+
+@app.route('/settings/password', methods=['GET', 'POST'])
+def change_password():
+    if 'id' not in session:
+        return redirect('/login')
+
+    if 'submit' in request.form:
+        old = request.form['3DMcpgW1TE20'].strip() if request.form['3DMcpgW1TE20'] else None
+        new = request.form['jeexVIObu6vo'].strip() if request.form['jeexVIObu6vo'] else None
+
+        user = User.query.get(int(session['id']))
+
+        if hash.pbkdf2_sha256.verify(old, user.password):
+            if valid_password(new):
+                user.password = hash.pbkdf2_sha256.encrypt(new)
+
+                db.session.commit()
+                return redirect('/settings')
+
+    return render_template('password.html')
+
+
+
+def valid_password(pw):
+    allowed = 'abcdefghijklmnopqrstuvwxyz01234656789!-@#$%^&*(=)?+'
+
+    if len(pw) < 6 or len(pw) > 20:
+        return False
+
+    for char in pw.lower():
+        if char not in allowed: return False
+
+    unique = len(set(pw))
+    print(unique)
+
+    return True
+
+
+
+@app.route('/settings/link')
+def login_link():
+    if 'id' not in session:
+        return redirect('/login')
+
+    user = User.query.get(int(session['id']))
+
+    if not user.code:
+        return redirect('/settings/link/new')
+
+    return render_template('link.html', code=user.code)
+
+
+
+@app.route('/settings/link/new')
+def new_link():
+    if 'id' not in session:
+        return redirect('/login')
+
+    user = User.query.get(int(session['id']))
+
+    code = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(24))
+    print(code)
+
+    user.code = code
+    db.session.commit()
+    return redirect('/settings/link')
 
 
 
@@ -173,5 +276,6 @@ def logout():
     return redirect('/memories')
 
 
+
 if __name__ == '__main__':
-	app.run()
+    app.run()

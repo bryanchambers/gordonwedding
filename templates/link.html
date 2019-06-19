@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div id='page'>
+        <div id='title'>Login Link</div>
+
+        <div id='page-content'>
+            <div class='simple-text'>You can copy the link below and use it to login without typing in the password. Anyone with this link will be able to login and approve posts, so keep it private.</div>
+
+            <div class='center button-spacer'>
+                <a href='/login/{{ code }}' class='button'>{{ code }}</a>
+                <a href='/settings/link/new' class='button'>Reset Link</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
