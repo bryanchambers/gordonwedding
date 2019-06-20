@@ -203,7 +203,7 @@ input {
 
 .input {
     width:              95%;
-    margin:             20px 0px;
+    margin:             20px auto;
     padding:            10px;
     font-family:       'Muli';
     font-size:          20px;
@@ -406,7 +406,7 @@ input {
     }
 
     form {
-        margin: 20px 0px;
+        margin: 20px auto;
     }
 
     form textarea {
