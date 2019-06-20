@@ -399,9 +399,7 @@ input {
     }
 
     .item {
-        margin:      50px 5px 120px 5px;
-        font-size:   50px;
-        line-height: 70px
+        margin: 50px 5px 120px 5px;
     }
 
     .question, .from, .answer, .memory {
