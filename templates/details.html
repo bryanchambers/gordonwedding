@@ -7,12 +7,13 @@
         <div id='page-content'>
             <div class='item'>
                 <div class='question'>Ceremony</div>
-                <div class='answer'>Please join us at noon on August 24th 2019 for our wedding ceremony at Marconi Gardens, located inside Slater Memorial Park in Pawtucket, Rhode Island.</div>
+                <div class='answer'>Please join us at noon on August 24th 2019 for our wedding ceremony at Marconi Gardens, located inside Slater Memorial Park in Pawtucket, Rhode Island. See below for more detailed directions.</div>
             </div>
 
             <div class='item'>
-                    <div class='question'>Map!</div>
-                    <div id='map' class='answer'></div>
+                    <div class='question'>Getting to the Ceremony</div>
+                    <div class='answer'>Enter Slater Park from Armistice Boulevard. Marconi Gardens will be on your right, just after the entrance. You should see a white gazebo&mdash;this is where the ceremony will be.</div>
+                    <div class='center'><a class='button' href='http://maps.apple.com/?q=41.875318,-71.342802' target='_blank'>Open Map</a></div>
                 </div>
 
             <div class='item'>
@@ -22,23 +23,8 @@
 
             <div class='item'>
                 <div class='question'>Reception</div>
-                <div class='answer'>After the ceremony, we would love you to join us at our home for food, drinks, music, and love. Our address is 211 Columbus Ave, Pawtucket, Rhode Island 02861.</div>
+                <div class='answer'>After the ceremony, we would love you to join us at our home for food, drinks, music, and love.</div>
             </div>
         </div>
     </div>
-
-    <script>
-        function initMap() {
-            var node = document.getElementById('map');
-
-            var gazebo   = {lat: 41.875574, lng: -71.343495 };
-            var entrance = {lat: 41.875376, lng: -71.342740 };
-
-            var map = new google.maps.Map(node, { zoom: 18, center: gazebo });
-            var pin = new google.maps.Marker({ position: gazebo,   map: map, label: 'Ceremony' });
-            var pin = new google.maps.Marker({ position: entrance, map: map, label: 'Entrance' });
-        }
-    </script>
-    
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=apikey&callback=initMap"></script>
 {% endblock %}
