@@ -175,6 +175,9 @@ body {
     line-height:   25px;
 }
 
+#map {
+    height: 500px;
+}
 
 
 
@@ -405,6 +408,10 @@ input {
     .answer, .memory {
         font-size:   50px;
         line-height: 70px;
+    }
+
+    #map {
+        height: 500px;
     }
 
     form {

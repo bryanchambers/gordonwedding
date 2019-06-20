@@ -11,6 +11,11 @@
             </div>
 
             <div class='item'>
+                    <div class='question'>Map!</div>
+                    <div id='map' class='answer'></div>
+                </div>
+
+            <div class='item'>
                 <div class='question'>Ceremony Accessibility</div>
                 <div class='answer'>The ceremony at Marconi Gardens will have a few chairs however will be mostly standing room. There will be a short walk from the car to the gazebo and a few stairs. Please wear comfortable foot wear. We understand that a standing ceremony may not be for everyone and if you are not able to attend we look forward to celebrating with you at the reception!</div>
             </div>
@@ -21,4 +26,19 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function initMap() {
+            var node = document.getElementById('map');
+
+            var gazebo   = {lat: 41.875574, lng: -71.343495 };
+            var entrance = {lat: 41.875376, lng: -71.342740 };
+
+            var map = new google.maps.Map(node, { zoom: 18, center: gazebo });
+            var pin = new google.maps.Marker({ position: gazebo,   map: map, label: 'Ceremony' });
+            var pin = new google.maps.Marker({ position: entrance, map: map, label: 'Entrance' });
+        }
+    </script>
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDghCqxw4ngRsvewbXIix5EKvLTOGmGINE&callback=initMap"></script>
 {% endblock %}
