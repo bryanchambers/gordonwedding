@@ -415,7 +415,7 @@ input {
     }
 
     .input {
-        margin:             50px 0px;
+        margin:             50px auto;
         padding:            30px;
         font-size:          50px;
         border:             2px solid rgba(235, 226, 230, 0.4);
