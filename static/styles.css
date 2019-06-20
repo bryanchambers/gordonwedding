@@ -164,7 +164,7 @@ body {
 }
 
 .question, .from {
-    padding: 5px 0px;
+    padding:     5px 0px;
     font-weight: bold;
 }
 
@@ -404,6 +404,11 @@ input {
 
     .question, .from, .answer, .memory {
         padding: 15px 0px;
+    }
+
+    .question, .from {
+        font-size:   50px;
+        line-height: 70px;
     }
 
     .answer, .memory {
