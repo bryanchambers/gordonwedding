@@ -202,7 +202,7 @@ input {
 }
 
 .input {
-    width:              95%;
+    width:              90%;
     margin:             20px auto;
     padding:            10px;
     font-family:       'Muli';
@@ -400,7 +400,7 @@ input {
         font-size:   50px;
         line-height: 70px
     }
-    
+
     .question, .from, .answer, .memory {
         padding: 15px 0px;
     }
