@@ -171,6 +171,8 @@ body {
 .answer, .memory {
     padding:       5px 0px;
     overflow-wrap: break-word;
+    font-size:     18px;
+    line-height:   25px;
 }
 
 
@@ -292,11 +294,6 @@ input {
     right: -15px;
 }
 
-.count-button {
-    top:    4px;
-    right: -5px;
-}
-
 
 
 
@@ -405,6 +402,11 @@ input {
         padding: 15px 0px;
     }
 
+    .answer, .memory {
+        font-size:   50px;
+        line-height: 70px;
+    }
+
     form {
         margin: 20px auto;
     }
@@ -456,10 +458,5 @@ input {
     .count-title {
         top:    20px;
         right: -50px;
-    }
-    
-    .count-button {
-        top:   -17px;
-        right: -10px;
     }
 }
