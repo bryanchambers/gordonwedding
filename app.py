@@ -93,6 +93,7 @@ def thanks():
 
 @app.route('/review')
 def review():
+    if 'id' not in session: return redirect('/login')
     count  = Memory.query.filter_by(approved=False, rejected=False, public=True).count()
     memory = Memory.query.filter_by(approved=False, rejected=False, public=True, skipped=False).order_by(Memory.created).first()
     
@@ -106,6 +107,7 @@ def review():
 
 @app.route('/review/skip/<int:id>')
 def skip(id):
+    if 'id' not in session: return redirect('/login')
     memory = Memory.query.get(id)
     
     memory.skipped = True
@@ -116,6 +118,7 @@ def skip(id):
 
 @app.route('/review/clear')
 def clear():
+    if 'id' not in session: return redirect('/login')
     memories = Memory.query.filter_by(approved=False, rejected=False, skipped=True).all()
     
     for memory in memories:
@@ -128,6 +131,7 @@ def clear():
 
 @app.route('/review/approve/<int:id>')
 def approve(id):
+    if 'id' not in session: return redirect('/login')
     memory = Memory.query.get(id)
 
     memory.approved = True
@@ -138,6 +142,7 @@ def approve(id):
 
 @app.route('/review/reject/<int:id>')
 def reject(id):
+    if 'id' not in session: return redirect('/login')
     memory = Memory.query.get(id)
     
     memory.rejected = True
@@ -279,7 +284,7 @@ def new_link():
 @app.route('/logout')
 def logout():
     session.clear()
-    return redirect('/memories')
+    return redirect('/')
 
 
 
