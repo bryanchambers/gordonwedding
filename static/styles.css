@@ -349,11 +349,11 @@ input {
         border-radius: 0px 0px 7px 7px;
     }
 
-    #bottom-nav a {
+    #bottom-nav a, #feedback a {
         padding: 20px;
     }
     
-    #bottom-nav img {
+    #bottom-nav img, #feedback img {
         height: 120px;
     }
 
