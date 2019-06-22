@@ -41,15 +41,21 @@ def home():
 
 
 
+@app.route('/details')
+def details():
+    return render_template('details.html')
+
+
+
 @app.route('/gifts')
 def gifts():
     return render_template('gifts.html')
 
 
 
-@app.route('/details')
-def details():
-    return render_template('details.html')
+@app.route('/feedback')
+def feedback():
+    return render_template('feedback.html')
 
 
 
