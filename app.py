@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail, Message
 
 from passlib import pwd, hash
 import random, string
@@ -10,6 +11,15 @@ app.secret_key = 'Kw4zL8StOmb2DxyeoickGyclkaGA2eYbBEQ6'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////var/www/gordonwedding/database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_USE_SSL']=True
+app.config['MAIL_PORT']=465
+app.config['MAIL_USERNAME']='brydevmail@gmail.com'
+app.config['MAIL_PASSWORD']='&gZB4@jQ8UFa'
+mail = Mail(app)
+
+addresses = { 'dev': ['bryches@gmail.com'], 'admin': ['bryches@gmail.com', 'Jaysinlayne.gordon@gmail.com'] }
 
 app.debug = True
 
@@ -85,6 +95,8 @@ def share():
             memory = Memory(text=text, sig=sig, approved=approved, public=public)
             db.session.add(memory)
             db.session.commit()
+
+            send_mail('New Memory from ' + memory.sig, addresses['admin'], memory.text)
             return redirect('/thanks')
 
     return render_template('share.html')
@@ -291,6 +303,12 @@ def new_link():
 def logout():
     session.clear()
     return redirect('/')
+
+
+
+def send_mail(subject, recipients, body):
+    msg = Message(subject, sender='brydevmail@gmail.com', recipients=recipients, body=body)
+    mail.send(msg)
 
 
 
