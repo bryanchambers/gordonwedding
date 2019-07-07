@@ -304,6 +304,10 @@ input {
     margin:  0px !important;
 }
 
+.spacer {
+    margin: 50px;
+}
+
 
 
 
@@ -454,5 +458,9 @@ input {
     .count-title {
         top:    20px;
         right: -50px;
+    }
+
+    .spacer {
+        margin: 50px;
     }
 }
