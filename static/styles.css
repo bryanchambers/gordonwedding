@@ -12,9 +12,6 @@ body {
 
 
 
-
-
-
 #main-nav {
     position:     fixed;
     top:          0px;
@@ -78,7 +75,6 @@ body {
 
 
 
-
 #main-text {
     position:           fixed;
     left:               0px;
@@ -104,7 +100,6 @@ body {
     background-color: #ebe2e6;
     border-radius:      3px;
 }
-
 
 
 
@@ -161,9 +156,6 @@ body {
 
 
 
-
-
-
 .item {
     margin: 20px 5px 50px 5px;
 }
@@ -183,10 +175,6 @@ body {
 #map {
     height: 500px;
 }
-
-
-
-
 
 
 
@@ -239,9 +227,6 @@ input {
 
 
 
-
-
-
 .button, .form-button-wrapper {
     display:          inline-block;
     margin:           20px 10px !important;
@@ -287,9 +272,6 @@ input {
 
 
 
-
-
-
 .count {
     position:           absolute;
     font-family:       'Muli';
@@ -301,9 +283,6 @@ input {
     top:    20px;
     right: -15px;
 }
-
-
-
 
 
 
@@ -324,9 +303,6 @@ input {
     padding: 0px !important;
     margin:  0px !important;
 }
-
-
-
 
 
 
@@ -443,15 +419,15 @@ input {
         border:             2px solid rgba(235, 226, 230, 0.4);
         border-radius:      7px;
     }
-    
+
     .input:focus {
         border:  2px solid #ebe2e6;
     }
 
     .button, .form-button-wrapper {
-        min-width:        300px;
+        min-width:        500px;
         padding:          50px !important; 
-        border:           2px solid rgba(235, 226, 230, 0.2) !important;
+        border:           3px solid rgba(235, 226, 230, 0.2) !important;
         border-radius:    7px;
     }
 
@@ -474,7 +450,7 @@ input {
     .count {
         font-size: 50px;
     }
-    
+
     .count-title {
         top:    20px;
         right: -50px;

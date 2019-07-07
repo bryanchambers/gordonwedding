@@ -12,11 +12,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////var/www/gordonwedding/databa
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-app.config['MAIL_SERVER']='smtp.gmail.com'
-app.config['MAIL_USE_SSL']=True
-app.config['MAIL_PORT']=465
-app.config['MAIL_USERNAME']='brydevmail@gmail.com'
-app.config['MAIL_PASSWORD']='&gZB4@jQ8UFa'
+app.config['MAIL_SERVER']   = 'smtp.gmail.com'
+app.config['MAIL_USE_SSL']  = True
+app.config['MAIL_PORT']     = 465
+app.config['MAIL_USERNAME'] = 'brydevmail@gmail.com'
+app.config['MAIL_PASSWORD'] = '&gZB4@jQ8UFa'
 mail = Mail(app)
 
 addresses = { 'dev': ['bryches@gmail.com'], 'admin': ['bryches@gmail.com', 'Jaysinlayne.gordon@gmail.com'] }
@@ -74,7 +74,7 @@ def memories():
     if 'type' in session:
         count  = Memory.query.filter_by(approved=False, rejected=False, public=True).count()
         memories = Memory.query.filter_by(approved=True).order_by(Memory.created).all()
-    
+
     else:
         count = 0
         memories = Memory.query.filter_by(approved=True, public=True).order_by(Memory.created).all()
@@ -114,7 +114,7 @@ def review():
     if 'id' not in session: return redirect('/login')
     count  = Memory.query.filter_by(approved=False, rejected=False, public=True).count()
     memory = Memory.query.filter_by(approved=False, rejected=False, public=True, skipped=False).order_by(Memory.created).first()
-    
+
     if not memory:
         skipped = Memory.query.filter_by(approved=False, rejected=False, public=True, skipped=True).all()
         if skipped: return redirect('/review/clear')
@@ -127,7 +127,7 @@ def review():
 def skip(id):
     if 'id' not in session: return redirect('/login')
     memory = Memory.query.get(id)
-    
+
     memory.skipped = True
     db.session.commit()
     return redirect('/review')
@@ -138,7 +138,7 @@ def skip(id):
 def clear():
     if 'id' not in session: return redirect('/login')
     memories = Memory.query.filter_by(approved=False, rejected=False, skipped=True).all()
-    
+
     for memory in memories:
         memory.skipped = False
 
@@ -162,7 +162,7 @@ def approve(id):
 def reject(id):
     if 'id' not in session: return redirect('/login')
     memory = Memory.query.get(id)
-    
+
     memory.rejected = True
     db.session.commit()
     return redirect('/review')
