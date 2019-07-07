@@ -73,7 +73,7 @@ def feedback():
 def memories():
     if 'type' in session:
         count  = Memory.query.filter_by(approved=False, rejected=False, public=True).count()
-        memories = Memory.query.filter_by(approved=True).order_by(Memory.created).all()
+        memories = Memory.query.filter_by(approved=True).order_by(Memory.created.desc()).all()
 
     else:
         count = 0
