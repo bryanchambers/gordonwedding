@@ -45,20 +45,31 @@ class Memory(db.Model):
 
 
 
+class Page(db.Model):
+    id     = db.Column(db.Integer, primary_key=True)
+    name   = db.Column(db.String(50))
+    visits = db.Column(db.Integer, default=0)
+    last   = db.Column(db.Integer)
+
+
+
 @app.route('/')
 def home():
+    add_page_visit('Home')
     return render_template('home.html', home=True)
 
 
 
 @app.route('/details')
 def details():
+    add_page_visit('Details')
     return render_template('details.html')
 
 
 
 @app.route('/gifts')
 def gifts():
+    add_page_visit('Gifts')
     return render_template('gifts.html')
 
 
@@ -71,6 +82,8 @@ def feedback():
 
 @app.route('/memories')
 def memories():
+    add_page_visit('Memories')
+
     if 'type' in session:
         count    = Memory.query.filter_by(approved=False, rejected=False, public=True).count()
         memories = Memory.query.filter_by(approved=True).order_by(Memory.created.desc()).all()
@@ -85,6 +98,8 @@ def memories():
 
 @app.route('/share', methods=['GET', 'POST'])
 def share():
+    add_page_visit('Share')
+
     if 'submit' in request.form:
         text     = request.form['text'] if 'text' in request.form else None
         sig      = request.form['from'] if 'from' in request.form else None
@@ -231,6 +246,25 @@ def settings():
 
 
 
+@app.route('/stats')
+def stats():
+    pending = Memory.query.filter_by(approved=False, rejected=False, public=True).count()
+    private = Memory.query.filter_by(public=False).count()
+    public  = Memory.query.filter_by(approved=False, public=True).count()
+
+    memories = {
+        'Pending': pending,
+        'Private': private,
+        'Public':  public,
+        'Total':   pending + private + public
+    }
+
+    pages = Page.query.all()
+
+    return render_template('stats.html', memories=memories, pages=pages)
+
+
+
 @app.route('/settings/password', methods=['GET', 'POST'])
 def change_password():
     if 'id' not in session:
@@ -310,6 +344,19 @@ def logout():
 def send_mail(subject, recipients, body):
     msg = Message(subject, sender='brydevmail@gmail.com', recipients=recipients, body=body)
     mail.send(msg)
+
+
+
+def add_page_visit(name):
+    page = Page.query.filter_by(name=name).first()
+
+    if not page:
+        page = Page(name=name, visits=0)
+        db.session.add(page)
+
+    page.visits = page.visits + 1
+    page.last   = int(time.time())
+    db.session.commit()
 
 
 

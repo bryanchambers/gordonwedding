@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div id='page'>
+        <div id='title'>Stats</div>
+
+        <div id='page-content'>
+            <div class='stats'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class='stat-val' >Visits</th>
+                            <th class='stat-name'>Page</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for page in pages %}
+                            <tr>
+                                <td class='stat-val' >{{ page.visits }}</td>
+                                <td class='stat-name'>{{ page.name }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class='stats'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class='stat-val' >Count</th>
+                            <th class='stat-name'>Memory Type</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for memory in memories %}
+                            <tr>
+                                <td class='stat-val' >{{ memories[memory] }}</td>
+                                <td class='stat-name'>{{ memory }} </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

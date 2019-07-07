@@ -1,2 +1,3 @@
 CREATE TABLE user(id INTEGER PRIMARY KEY AUTOINCREMENT, type TEXT, password TEXT, code TEXT);
 CREATE TABLE memory(id INTEGER PRIMARY KEY, text TEXT, sig TEXT, public BOOLEAN, approved BOOLEAN, rejected BOOLEAN, skipped BOOLEAN, created INTEGER);
+CREATE TABLE page(id INTEGER PRIMARY KEY, name TEXT, visits INTEGER, last INTEGER)

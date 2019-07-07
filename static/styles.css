@@ -290,6 +290,41 @@ input {
 
 
 
+.stats {
+    text-align: center;
+}
+
+.stats table {
+    display:         inline-block;
+    margin:          30px;
+    text-align:      center;
+    border-collapse: collapse;
+}
+
+.stats tr {
+    border-bottom: 1px solid rgba(235, 226, 230, 0.2) !important;
+}
+
+.stats td, .stats th {
+    padding: 7px;
+}
+
+.stats .stat-val {
+    min-width: 100px;
+}
+
+.stats .stat-name {
+    min-width:    150px;
+    padding-left: 20px;
+    text-align:   left;
+}
+
+
+
+
+
+
+
 .center {
     text-align: center;
 }
