@@ -77,7 +77,7 @@ def memories():
 
     else:
         count = 0
-        memories = Memory.query.filter_by(approved=True, public=True).order_by(Memory.created).all()
+        memories = Memory.query.filter_by(approved=True, public=True).order_by(Memory.created.desc()).all()
 
     return render_template('memories.html', memories=memories, count=count)
 
