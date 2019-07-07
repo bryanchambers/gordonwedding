@@ -250,7 +250,7 @@ def settings():
 def stats():
     pending = Memory.query.filter_by(approved=False, rejected=False, public=True).count()
     private = Memory.query.filter_by(public=False).count()
-    public  = Memory.query.filter_by(approved=False, public=True).count()
+    public  = Memory.query.filter_by(approved=True, public=True).count()
 
     memories = {
         'Pending': pending,
