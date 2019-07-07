@@ -416,18 +416,18 @@ input {
         margin:             50px auto;
         padding:            30px;
         font-size:          50px;
-        border:             2px solid rgba(235, 226, 230, 0.4);
+        border:             4px solid rgba(235, 226, 230, 0.4);
         border-radius:      7px;
     }
 
     .input:focus {
-        border:  2px solid #ebe2e6;
+        border:  4px solid #ebe2e6;
     }
 
     .button, .form-button-wrapper {
         min-width:        500px;
         padding:          50px !important; 
-        border:           3px solid rgba(235, 226, 230, 0.2) !important;
+        border:           4px solid rgba(235, 226, 230, 0.2) !important;
         border-radius:    7px;
     }
 
