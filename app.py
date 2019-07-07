@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
 
 from passlib import pwd, hash
-import random, string
+import random, string, time
 
 app = Flask(__name__)
 app.secret_key = 'Kw4zL8StOmb2DxyeoickGyclkaGA2eYbBEQ6'
@@ -41,7 +41,7 @@ class Memory(db.Model):
     approved = db.Column(db.Boolean, default=False)
     rejected = db.Column(db.Boolean, default=False)
     skipped  = db.Column(db.Boolean, default=False)
-    created  = db.Column(db.DateTime)
+    created  = db.Column(db.Integer)
 
 
 
@@ -72,11 +72,11 @@ def feedback():
 @app.route('/memories')
 def memories():
     if 'type' in session:
-        count  = Memory.query.filter_by(approved=False, rejected=False, public=True).count()
+        count    = Memory.query.filter_by(approved=False, rejected=False, public=True).count()
         memories = Memory.query.filter_by(approved=True).order_by(Memory.created.desc()).all()
 
     else:
-        count = 0
+        count    = 0
         memories = Memory.query.filter_by(approved=True, public=True).order_by(Memory.created.desc()).all()
 
     return render_template('memories.html', memories=memories, count=count)
@@ -90,9 +90,10 @@ def share():
         sig      = request.form['from'] if 'from' in request.form else None
         public   = True if request.form['submit'] == 'Everyone' else False
         approved = not public 
+        created  = int(time.time())
 
         if text and sig:
-            memory = Memory(text=text, sig=sig, approved=approved, public=public)
+            memory = Memory(text=text, sig=sig, approved=approved, public=public, created=created)
             db.session.add(memory)
             db.session.commit()
 
