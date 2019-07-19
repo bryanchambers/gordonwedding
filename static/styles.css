@@ -515,7 +515,7 @@ input {
     }
 
     .stats td, .stats th {
-        padding: 7px;
+        padding: 20px;
     }
 
     .stats .stat-val {
@@ -525,6 +525,5 @@ input {
     .stats .stat-name {
         min-width:    150px;
         padding-left: 20px;
-        text-align:   left;
     }
 }
