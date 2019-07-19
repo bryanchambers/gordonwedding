@@ -515,15 +515,15 @@ input {
     }
 
     .stats td, .stats th {
-        padding: 20px;
+        padding: 50px;
     }
 
     .stats .stat-val {
-        min-width: 100px;
+        min-width: 200px;
     }
 
     .stats .stat-name {
-        min-width:    150px;
-        padding-left: 20px;
+        min-width:    300px;
+        padding-left: 50px;
     }
 }
