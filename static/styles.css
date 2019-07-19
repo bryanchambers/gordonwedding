@@ -508,7 +508,7 @@ input {
     }
 
     .stats tr {
-        border-bottom: 3px solid #ab96b5 !important;
+        border-bottom: 2px solid #8f74a0 !important;
     }
 
     .stats td, .stats th {
