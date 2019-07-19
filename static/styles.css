@@ -508,11 +508,11 @@ input {
     }
 
     .stats tr {
-        border-bottom: 4px solid rgba(235, 226, 230, 0.2) !important;
+        border-bottom: 3px solid rgba(235, 226, 230, 0.2) !important;
     }
 
     .stats td, .stats th {
-        padding: 35px;
+        padding: 40px;
     }
 
     .stats .stat-val {
