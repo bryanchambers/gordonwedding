@@ -504,10 +504,7 @@ input {
     }
     
     .stats table {
-        display:         inline-block;
-        margin:          30px;
-        text-align:      center;
-        border-collapse: collapse;
+        margin: 50px;
     }
 
     .stats tr {
@@ -515,15 +512,15 @@ input {
     }
 
     .stats td, .stats th {
-        padding: 50px;
+        padding: 40px;
     }
 
     .stats .stat-val {
-        min-width: 200px;
+        min-width: 175px;
     }
 
     .stats .stat-name {
-        min-width:    300px;
-        padding-left: 50px;
+        min-width:    250px;
+        padding-left: 30px;
     }
 }
