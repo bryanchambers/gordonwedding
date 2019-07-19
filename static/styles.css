@@ -504,15 +504,15 @@ input {
     }
     
     .stats table {
-        margin: 50px;
+        margin: 60px;
     }
 
     .stats tr {
-        border-bottom: 1px solid rgba(235, 226, 230, 0.2) !important;
+        border-bottom: 4px solid rgba(235, 226, 230, 0.2) !important;
     }
 
     .stats td, .stats th {
-        padding: 40px;
+        padding: 35px;
     }
 
     .stats .stat-val {
@@ -520,7 +520,7 @@ input {
     }
 
     .stats .stat-name {
-        min-width:    250px;
+        min-width:    300px;
         padding-left: 30px;
     }
 }
