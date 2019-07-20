@@ -45,7 +45,7 @@ body {
 
 #bottom-nav a {
     padding: 7px;
-    opacity: 0.2;
+    opacity: 0.4;
     text-decoration: none;
 }
 
@@ -362,7 +362,7 @@ input {
     }
 
     #bottom-nav a {
-        padding: 50px;
+        padding: 0px;
     }
     
     #bottom-nav img {
