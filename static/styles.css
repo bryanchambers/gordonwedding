@@ -57,7 +57,11 @@ body {
     opacity: 1;
 }
 
-.login-logout {
+#bottom-nav .large-icons {
+    height: 25px;
+}
+
+#bottom-nav .small-icons {
     position: relative;
     top: -2px;
 }
@@ -365,7 +369,11 @@ input {
         height: 90px;
     }
 
-    .login-logout {
+    #bottom-nav .large-icons {
+        height: 70px;
+    }
+
+    #bottom-nav .small-icons {
         top: -5px;
     }
 

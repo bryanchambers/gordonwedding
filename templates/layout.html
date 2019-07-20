@@ -22,20 +22,20 @@
 
             {% if not home %}
                 <div id='bottom-nav'><a href='/' title='Home'>
-                    <img src="{{ url_for('static', filename='heart.png') }}"></a>
+                    <img src="{{ url_for('static', filename='heart.png') }}" class='large-icons'></a>
 
                     {% if 'type' in session %}
-                        <a href='/settings' title='Settings'><img src="{{ url_for('static', filename='gear.png') }}" class='login-logout'></a>
-                        <a href='/logout' title='Logout'><img src="{{ url_for('static', filename='logout.png') }}" class='login-logout'></a>
+                        <a href='/settings' title='Settings'><img src="{{ url_for('static', filename='gear.png') }}" class='small-icons'></a>
+                        <a href='/logout' title='Logout'><img src="{{ url_for('static', filename='logout.png') }}" class='small-icons'></a>
 
                     {% else %}<a href='/login' title='Bride and Groom Login'>
-                        <img src="{{ url_for('static', filename='key.png') }}" class='login-logout'>
+                        <img src="{{ url_for('static', filename='key.png') }}" class='large-icons'>
                     </a>
 
                     {% endif %}
 
                     <a href='/feedback' title='Trouble with the website?'>
-                        <img src="{{ url_for('static', filename='feedback.png') }}" class='login-logout'>
+                        <img src="{{ url_for('static', filename='feedback.png') }}" class='large-icons'>
                     </a>
                 </div>
             {% endif %}
