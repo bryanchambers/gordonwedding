@@ -23,18 +23,21 @@
             {% if not home %}
                 <div id='bottom-nav'><a href='/' title='Home'>
                     <img src="{{ url_for('static', filename='heart.png') }}"></a>
-    
+
                     {% if 'type' in session %}
                         <a href='/settings' title='Settings'><img src="{{ url_for('static', filename='gear.png') }}" class='login-logout'></a>
                         <a href='/logout' title='Logout'><img src="{{ url_for('static', filename='logout.png') }}" class='login-logout'></a>
-                    
-                    {% else %}<a href='/login' title='Bride and Groom Login'>
-                        <img src="{{ url_for('static', filename='key.png') }}" class='login-logout'></a>
-                    
-                    {% endif %}
-                </div>
 
-                <div id='feedback'><a href='/feedback' title='Trouble with the website?'><img src="{{ url_for('static', filename='feedback.png') }}" class='login-logout'></a></div>
+                    {% else %}<a href='/login' title='Bride and Groom Login'>
+                        <img src="{{ url_for('static', filename='key.png') }}" class='login-logout'>
+                    </a>
+
+                    {% endif %}
+
+                    <a href='/feedback' title='Trouble with the website?'>
+                        <img src="{{ url_for('static', filename='feedback.png') }}" class='login-logout'>
+                    </a>
+                </div>
             {% endif %}
         </div>
     </body>

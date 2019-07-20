@@ -40,33 +40,26 @@ body {
     right:      0px;
     padding:    15px;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
-#bottom-nav a, #feedback a {
+#bottom-nav a {
     padding: 7px;
     opacity: 0.2;
     text-decoration: none;
 }
 
-#bottom-nav img, #feedback img {
-    height: 40px;
+#bottom-nav img {
+    height: 30px;
 }
 
-#bottom-nav a:hover, #feedback a:hover {
+#bottom-nav a:hover {
     opacity: 1;
 }
 
 .login-logout {
     position: relative;
     top: -2px;
-}
-
-#feedback {
-    position:   fixed;
-    bottom:     0px;
-    right:      0px;
-    padding:    15px;
-    text-align: center;
 }
 
 
@@ -364,12 +357,12 @@ input {
         border-radius: 0px 0px 7px 7px;
     }
 
-    #bottom-nav a, #feedback a {
+    #bottom-nav a {
         padding: 20px;
     }
     
-    #bottom-nav img, #feedback img {
-        height: 120px;
+    #bottom-nav img {
+        height: 90px;
     }
 
     .login-logout {
