@@ -361,6 +361,10 @@ input {
         border-radius: 0px 0px 7px 7px;
     }
 
+    #bottom-nav {
+        padding-top: 20px;
+    }
+
     #bottom-nav a {
         padding: 20px;
     }
@@ -370,7 +374,7 @@ input {
     }
 
     #bottom-nav .large-icons {
-        height: 70px;
+        height: 80px;
     }
 
     #bottom-nav .small-icons {
