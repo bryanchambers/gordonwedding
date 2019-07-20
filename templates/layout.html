@@ -25,8 +25,8 @@
                     <img src="{{ url_for('static', filename='heart.png') }}" class='large-icons'></a>
 
                     {% if 'type' in session %}
-                        <a href='/settings' title='Settings'><img src="{{ url_for('static', filename='gear.png') }}" class='small-icons'></a>
-                        <a href='/logout' title='Logout'><img src="{{ url_for('static', filename='logout.png') }}" class='small-icons'></a>
+                        <a href='/settings' title='Settings'><img src="{{ url_for('static', filename='gear.png') }}"></a>
+                        <a href='/logout' title='Logout'><img src="{{ url_for('static', filename='logout.png') }}"></a>
 
                     {% else %}<a href='/login' title='Bride and Groom Login'>
                         <img src="{{ url_for('static', filename='key.png') }}" class='large-icons'>
