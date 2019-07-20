@@ -361,8 +361,12 @@ input {
         border-radius: 0px 0px 7px 7px;
     }
 
+    #bottom-nav {
+        padding-top: 30px;
+    }
+
     #bottom-nav a {
-        padding: 35px;
+        padding: 40px;
     }
     
     #bottom-nav img {
